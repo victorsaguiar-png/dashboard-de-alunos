@@ -200,10 +200,35 @@ function exibirAlunos(alunos) {
   })
 }
 
+function aprovados(alunos) {
+  listaAlunos.innerHTML = ""
+  const alunosAprovados = alunos.filter((aluno) => {
+    return aluno.notaFinal >= 7
+  })
+
+  exibirAlunos(alunosAprovados)
+  }
+
+  function reprovados(alunos) {
+  listaAlunos.innerHTML = ""
+  const alunosReprovados = alunos.filter((aluno) => {
+    return aluno.notaFinal <= 6.9
+  })
+
+  exibirAlunos(alunosReprovados)
+  }
+
+btnReprovados.addEventListener("click", ()=> {
+  reprovados(alunos)
+})  
+
+btnAprovados.addEventListener("click", ()=> {
+  aprovados(alunos)
+})
+
 btnTodos.addEventListener("click", () => {
   exibirAlunos(alunos)
 })
-
 // DESAFIOS:
 // 1. Mostrar todos os alunos na tela usando o array alunos.
 // 2. Criar cards de aluno usando innerHTML ou createElement.

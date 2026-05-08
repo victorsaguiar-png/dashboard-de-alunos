@@ -378,3 +378,8 @@ body {
     flex: 1;
   }
 }
+
+.botoes-filtro button:hover{
+  background-color: blue;
+  color: white;
+}
